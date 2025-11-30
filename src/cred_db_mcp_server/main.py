@@ -20,7 +20,7 @@ def create_demo():
         inputs=[gr.Textbox(label="NPI")],
         outputs=gr.JSON(label="Provider Data"),
         description="Syncs a provider's data from the NPI registry.",
-        allow_flagging="never"
+        flagging_mode="never"
     )
 
     # Tool 2: add_or_update_credential
@@ -35,7 +35,7 @@ def create_demo():
         ],
         outputs=gr.JSON(label="Credential Data"),
         description="Adds or updates a credential for a provider.",
-        allow_flagging="never"
+        flagging_mode="never"
     )
 
     # Tool 3: list_expiring_credentials
@@ -48,7 +48,7 @@ def create_demo():
         ],
         outputs=gr.JSON(label="Expiring Credentials"),
         description="Lists credentials expiring within a certain number of days.",
-        allow_flagging="never"
+        flagging_mode="never"
     )
 
     # Tool 4: get_provider_snapshot
@@ -60,7 +60,7 @@ def create_demo():
         ],
         outputs=gr.JSON(label="Provider Snapshot"),
         description="Gets a snapshot of a provider's data including credentials and alerts.",
-        allow_flagging="never"
+        flagging_mode="never"
     )
 
     demo = gr.TabbedInterface(
