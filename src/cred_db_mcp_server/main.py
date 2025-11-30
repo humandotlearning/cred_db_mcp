@@ -6,9 +6,9 @@ from .tools import (
     get_provider_snapshot
 )
 
-def main():
+def create_demo():
     """
-    Main entry point for the Gradio MCP server.
+    Creates the Gradio interface for the MCP server.
     """
     # Create the Gradio interface
     # We use a TabbedInterface to organize the tools if accessed via UI,
@@ -67,9 +67,9 @@ def main():
         [iface_sync, iface_add_cred, iface_expiring, iface_snapshot],
         ["Sync Provider", "Add/Update Credential", "List Expiring", "Provider Snapshot"]
     )
-
-    # Launch with mcp_server=True to enable MCP endpoints
-    demo.launch(mcp_server=True)
+    return demo
 
 if __name__ == "__main__":
-    main()
+    demo = create_demo()
+    # Launch with mcp_server=True to enable MCP endpoints
+    demo.launch(mcp_server=True)
